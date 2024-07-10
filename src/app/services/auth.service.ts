@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  signup(lastName: string, teamId: string, name: string, password: string): Observable<any> {
+  signup(lastName: string,name: string, teamId: string,  password: string): Observable<any> {
     const body = { lastName, teamId, name, password };
     return this.http.post<any>(`${this.apiUrl}/SignUp`, body).pipe(
       tap(data => {

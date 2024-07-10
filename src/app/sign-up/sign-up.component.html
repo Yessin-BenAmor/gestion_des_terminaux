@@ -1,57 +1,57 @@
 <section class="vh-100">
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                <h1 class="text-center mb-4">Sign up</h1>
-            <!-- Lastname input -->
-            <div data-mdb-input-init class="form-outline mb-4">
-              <input type="text" id="form3Example3" class="form-control form-control-lg"
-                placeholder="Enter Last name" />
-              <label class="form-label" for="Lastname">Last name</label>
-            </div>
-                   <!-- Name input -->
-                   <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="text" id="form3Example5" class="form-control form-control-lg"
-                      placeholder="Enter Name" />
-                    <label class="form-label" for="form3Example5">Name</label>
-                  </div>
-              <!--  team id input -->
-              <div data-mdb-input-init class="form-outline mb-3">
-                <input type="text" id="form3Example6" class="form-control form-control-lg"
-                  placeholder="enter team id " />
-                <label class="form-label" for="form3Example6">Team id</label>
-              </div>
-  
-     
-  
-            <!-- Password input -->
-            <div data-mdb-input-init class="form-outline mb-3">
-              <input type="password" id="password" class="form-control form-control-lg"
-                placeholder="Enter password" />
-              <label class="form-label" for="password">Password</label>
-            </div>
-  
-            <!-- Confirm Password input -->
-            <div data-mdb-input-init class="form-outline mb-3">
-              <input type="password" id="form3Example6" class="form-control form-control-lg"
-                placeholder="Confirm password" />
-              <label class="form-label" for="password">Confirm Password</label>
-            </div>
-  
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" data-mdb-button-init data-mdb-ripple-init class="button"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a routerLink="/signIn"
-                  routerLinkActive="active" style="cursor: pointer;" class="link-danger">Login</a></p>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-            class="img-fluid" alt="Sample image">
-        </div>
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <h1 class="text-center mb-4">Sign up</h1>
+
+          <!-- Lastname input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form3Example3" formControlName="lastName" class="form-control form-control-lg"
+              placeholder="Enter Last name" />
+            <label class="form-label" for="form3Example3">Last name</label>
+          </div>
+
+          <!-- Name input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="form3Example5" formControlName="name" class="form-control form-control-lg"
+              placeholder="Enter Name" />
+            <label class="form-label" for="form3Example5">Name</label>
+          </div>
+
+          <!-- Team ID input -->
+          <div data-mdb-input-init class="form-outline mb-3">
+            <input type="text" id="form3Example6" formControlName="teamId" class="form-control form-control-lg"
+              placeholder="Enter team ID" />
+            <label class="form-label" for="form3Example6">Team ID</label>
+          </div>
+
+          <!-- Password input -->
+          <div data-mdb-input-init class="form-outline mb-3">
+            <input type="password" id="password" formControlName="password" class="form-control form-control-lg"
+              placeholder="Enter password" />
+            <label class="form-label" for="password">Password</label>
+          </div>
+
+          <!-- Confirm Password input -->
+          <div data-mdb-input-init class="form-outline mb-3">
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control form-control-lg"
+              placeholder="Confirm password" />
+            <label class="form-label" for="confirmPassword">Confirm Password</label>
+          </div>
+
+          <div class="text-center texta-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a routerLink="/signIn"
+                routerLinkActive="active" style="cursor: pointer;" class="link-danger">Login</a></p>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid" alt="Sample image">
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>

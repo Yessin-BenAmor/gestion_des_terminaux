@@ -48,7 +48,7 @@ export class SignUpComponent {
 
   onSubmit() {
     this.submitted = true;
-
+    console.log("test");
     if (this.registerForm.invalid) {
       alert('Form is invalid. Please fill out all required fields correctly.');
       return;
