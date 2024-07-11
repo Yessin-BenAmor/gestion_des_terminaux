@@ -7,13 +7,16 @@ import {ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 
+
 import { BrowserModule } from '@angular/platform-browser';
 @NgModule({
   declarations: [
     ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
 })

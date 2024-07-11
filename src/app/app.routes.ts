@@ -9,11 +9,14 @@ export const routes: Routes = [
 {path: '', component: HomeComponent,},
 {path : 'signUp', component : SignUpComponent},
 {path:'signIn', component : SignInComponent},
-{path:'profile', component : ProfileComponent}
+{ path: 'profile/:id', component: ProfileComponent }, // Add your profile component here
 
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
   })
-  export class AppRoutingModule { }
+  export class AppRoutingModule { 
+    
+  }
+  
