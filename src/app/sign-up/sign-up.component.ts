@@ -4,7 +4,7 @@
   import { AuthService } from '../services/auth.service';
   import { HttpClientModule,provideHttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
-
+import { Router } from '@angular/router';
   // Custom validator to check that two fields match
   export function MustMatch(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
@@ -26,7 +26,7 @@ import { RouterLink } from '@angular/router';
   @Component({
     selector: 'app-sign-up',
     standalone: true,
-    providers: [AuthService], 
+    providers: [AuthService,], 
     imports: [ReactiveFormsModule,RouterLink, HttpClientModule, CommonModule], 
     templateUrl: './sign-up.component.html',
     styleUrls: ['./sign-up.component.css'] //
@@ -35,7 +35,7 @@ import { RouterLink } from '@angular/router';
     submitted = false;
     registerForm: FormGroup;
 
-    constructor(private formBuilder: FormBuilder, private authService: AuthService) {
+    constructor(private formBuilder: FormBuilder, private authService: AuthService,private router : Router) {
       this.registerForm = this.formBuilder.group({
         username: ['', Validators.required],
         id_team: ['', Validators.required],
@@ -62,6 +62,7 @@ import { RouterLink } from '@angular/router';
           console.log(data);
           this.registerForm.reset();
           this.submitted = true;
+          this.router.navigate(['/signIn']);
         },
         error => {
           alert('Registration failed. Please try again.');

@@ -30,13 +30,17 @@ export class AuthService {
     );
   }
 
-  signout(): void {
+
+
+  signout(): any {
     // Remove token ml localStorage  
     localStorage.removeItem('token');
+    console.log(localStorage.getItem('token')); 
   }
 
   isLoggedIn(): boolean {
     // Check if token exists  
     return !!localStorage.getItem('token');
   }
+
 }

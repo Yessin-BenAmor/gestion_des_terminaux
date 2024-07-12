@@ -37,6 +37,7 @@ export class SignInComponent {
       (data: any) => {
         console.log('Login successful:', data);
         alert('Login successful');
+        localStorage.setItem('loggedUser', JSON.stringify(data.data));
         this.router.navigate(['/profile', username]); 
       },
       (error: any) => {

@@ -1,167 +1,121 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <br>
-    <br>   
-      <br>
+<!-- sign-in.component.html -->
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center">
 
-    <h1 style="text-align:center ">Welcome username</h1>
+    <div class="logo me-auto">
+      <h1><a routerLink="">Terminal Manager</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+       
+    <div class="text-center mt-4">
+      <button class="btn btn-danger" (click)="signOut()">Sign Out</button>
+    </div>
+
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <div class="header-social-links d-flex align-items-center">
+      <a href="https://x.com/telnetholding" class="twitter"><i class="bi bi-twitter"></i></a>
+      <a href="https://www.facebook.com/telnet.holding.tn" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/telnet-tunisie-bb5883140" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+  </div>
+</header><!-- End Header -->
+     
     <section id="portfolio" class="portfolio">
         <div class="container">
     
           <div class="section-title">
-            <h2>Portfolio</h2>
+            <h2>Welcome to your Portfolio</h2>
             <p>Find below your portfolio items showcasing your EPT devices.</p>
           </div>
-    
-          <div class="row">
-            <div class="col-lg-12">
-              <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">App</li>
-                <li data-filter=".filter-card">Card</li>
-                <li data-filter=".filter-web">Web</li>
-              </ul>
-            </div>
-          </div>
-    
-          <div class="row portfolio-container">
-    
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-              <div class="portfolio-wrap">
-                <figure>
-                  <img src="assets/img/portfolio/move5000.png"   class="img-fluid" alt="">
-                  <a href="assets/img/portfolio/move5000.png" data-gallery="portfolioGallery" class="link-preview portfolio-lightbox" title="Preview"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                </figure>
-    
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html">App 1</a></h4>
-                  <p>App</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-              <div class="portfolio-wrap">
-                <figure>
-                  <img src="assets/img/portfolio/move5000.png" class="img-fluid" alt="">
-                  <a href="assets/img/portfolio/move5000.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                </figure>
-    
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html">Web 3</a></h4>
-                  <p>Web</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-              <div class="portfolio-wrap">
-                <figure>
-                  <img src="assets/img/portfolio/move5000.png" class="img-fluid" alt="">
-                  <a href="assets/img/portfolio/move5000.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                </figure>
-    
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html">App 2</a></h4>
-                  <p>App</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-              <div class="portfolio-wrap">
-                <figure>
-                  <img src="assets/img/portfolio/move5000.png" class="img-fluid" alt="">
-                  <a href="assets/img/portfolio/move5000.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                </figure>
-    
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html">Card 2</a></h4>
-                  <p>Card</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-              <div class="portfolio-wrap">
-                <figure>
-                  <img src="assets/img/portfolio/move5000.png" class="img-fluid" alt="">
-                  <a href="assets/img/portfolio/move5000.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                </figure>
-    
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html">Web 2</a></h4>
-                  <p>Web</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-              <div class="portfolio-wrap">
-                <figure>
-                  <img src="assets/img/portfolio/move5000.png" class="img-fluid" alt="">
-                  <a href="assets/img/portfolio/move5000.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                </figure>
-    
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html">App 3</a></h4>
-                  <p>App</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-              <div class="portfolio-wrap">
-                <figure>
-                  <img src="assets/img/portfolio/move5000.png" class="img-fluid" alt="">
-                  <a href="assets/img/portfolio/move5000.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                </figure>
-    
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html">Card 1</a></h4>
-                  <p>Card</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
-              <div class="portfolio-wrap">
-                <figure>
-                  <img src="assets/img/portfolio/move5000.png" class="img-fluid" alt="">
-                  <a href="assets/img/portfolio/move5000.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                </figure>
-    
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html">Card 3</a></h4>
-                  <p>Card</p>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
-              <div class="portfolio-wrap">
-                <figure>
-                  <img src="assets/img/portfolio/move5000.png" class="img-fluid" alt="">
-                  <a href="assets/img/portfolio/move5000.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                </figure>
-    
-                <div class="portfolio-info">
-                  <h4><a href="portfolio-details.html">Web 1</a></h4>
-                  <p>Web</p>
-                </div>
-              </div>
-            </div>
-    
-          </div>
-    
-        </div>
-      </section><!-- End Portfolio Section -->
-    
+        
+          <!--tableau-->
+          <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search...">
+          <table class="table" id="dataTable">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">id</th>
+                <th scope="col">TID</th>
+                <th scope="col">sponsor</th>
+                <th scope="col">GEM Test</th>
+                <th scope="col">GEM Auto</th>
+                <th scope="col">GEM util</th>
+                <th scope="col">Terminal type</th>
+                <th scope="col">option</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>101</td>
+                <td>TID-001</td>
+                <td> A</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>MOVE </td>
+                <td>DCC</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>202</td>
+                <td>TID-002</td>
+                <td> B</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>Standard </td>
+                <td>UDA</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>303</td>
+                <td>TID-003</td>
+                <td> C</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>DESK </td>
+                <td>DCC</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>404</td>
+                <td>TID-004</td>
+                <td> D</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>Standard </td>
+                <td>UDA</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>505</td>
+                <td>TID-005</td>
+                <td> E</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>MOVE </td>
+                <td>UDA</td>
+              </tr>
+            </tbody>
+          </table>
+          
