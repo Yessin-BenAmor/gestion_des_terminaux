@@ -35,10 +35,11 @@ export class SignInComponent {
   
     this.authService.signin(username, password).subscribe(
       (data: any) => {
-        console.log('Login successful:', data);
-        alert('Login successful');
-        localStorage.setItem('loggedUser', JSON.stringify(data.data));
-        this.router.navigate(['/profile', username]); 
+         alert('Login successful');
+        localStorage.setItem('usernameValuemlsignin', username);
+        const storedUsername = localStorage.getItem('usernameValuemlsignin');
+        const id = localStorage.setItem('id',data.userId); 
+        this.router.navigate(['/profile', storedUsername]);
       },
       (error: any) => {
         console.error('Login error:', error);

@@ -1,121 +1,156 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 <!-- sign-in.component.html -->
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center">
   <div class="container d-flex align-items-center">
-
     <div class="logo me-auto">
       <h1><a routerLink="">Terminal Manager</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
     </div>
-
     <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
-       
-    <div class="text-center mt-4">
-      <button class="btn btn-danger" (click)="signOut()">Sign Out</button>
-    </div>
-
+        <div class="text-center mt-4">
+          <button class="btn btn-danger" (click)="signOut()"><img style="width: 30px; display: flex " src="..\..\assets\img\logout.png"> </button>
+        </div>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
-
+    </nav>
     <div class="header-social-links d-flex align-items-center">
       <a href="https://x.com/telnetholding" class="twitter"><i class="bi bi-twitter"></i></a>
       <a href="https://www.facebook.com/telnet.holding.tn" class="facebook"><i class="bi bi-facebook"></i></a>
       <a href="https://www.linkedin.com/in/telnet-tunisie-bb5883140" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
-
   </div>
 </header><!-- End Header -->
-     
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-    
-          <div class="section-title">
-            <h2>Welcome to your Portfolio</h2>
-            <p>Find below your portfolio items showcasing your EPT devices.</p>
-          </div>
-        
-          <!--tableau-->
-          <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search...">
-          <table class="table" id="dataTable">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">id</th>
-                <th scope="col">TID</th>
-                <th scope="col">sponsor</th>
-                <th scope="col">GEM Test</th>
-                <th scope="col">GEM Auto</th>
-                <th scope="col">GEM util</th>
-                <th scope="col">Terminal type</th>
-                <th scope="col">option</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>101</td>
-                <td>TID-001</td>
-                <td> A</td>
-                <td>Yes</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>MOVE </td>
-                <td>DCC</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>202</td>
-                <td>TID-002</td>
-                <td> B</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>No</td>
-                <td>Standard </td>
-                <td>UDA</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>303</td>
-                <td>TID-003</td>
-                <td> C</td>
-                <td>Yes</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>DESK </td>
-                <td>DCC</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>404</td>
-                <td>TID-004</td>
-                <td> D</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>No</td>
-                <td>Standard </td>
-                <td>UDA</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>505</td>
-                <td>TID-005</td>
-                <td> E</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>MOVE </td>
-                <td>UDA</td>
-              </tr>
-            </tbody>
-          </table>
-          
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="section-title">
+      <h2 style="margin-top: 1cm;">Welcome to your Portfolio</h2>
+      <p>Find below your portfolio items showcasing your EPT devices.</p>
+    </div>
+
+    <!-- Form -->
+    <div class="form-container" style="margin-bottom: 1cm;" >
+      <h2>{{header}}</h2>
+      <form [formGroup]="tidForm" (ngSubmit)="onSubmit()">
+        <table class="table">
+          <thead>
+            <tr>
+              <th style="width: 5%;" scope="col"></th>
+              <th scope="col">TID</th>
+              <th scope="col">Sponsor</th>
+              <th scope="col">GEM Test</th>
+              <th scope="col">GEM Auto</th>
+              <th scope="col">GEM UTIL4DEV</th>
+              <th scope="col" style="width: 20%;">Terminal Type</th>
+              <th scope="col">DCC</th>
+              <th scope="col">UPI</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td><input type="text" placeholder="IS IT UNIQUE? "formControlName="TID" class="form-control"></td>
+              <td><input type="text" placeholder="Selec" formControlName="sponsor" class="form-control"></td>
+              <td style="width: 7%;">
+                <div class="form-check form-switch d-flex justify-content-center">
+                  <input class="form-check-input" type="checkbox" formControlName="GEM_Test" id="gemTestSwitch">
+                </div>
+              </td>
+              <td style="width: 8%;">
+                <div class="form-check form-switch d-flex justify-content-center">
+                  <input class="form-check-input" type="checkbox" formControlName="GEM_Auto" id="gemAutoSwitch">
+                </div>
+              </td>
+              <td style="width: 11%;">
+                <div class="form-check form-switch d-flex justify-content-center">
+                  <input class="form-check-input" type="checkbox" formControlName="GEM_UTIL4DEV" id="gemUtilSwitch">
+                </div>
+              </td>
+              <td><input type="text" placeholder="Select" formControlName="Terminal_type" class="form-control"></td>
+              <td>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="DCC" id="dccCheckbox">
+                </div>
+              </td>
+              <td>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" formControlName="UPI" id="upiCheckbox">
+                </div>
+              </td>
+              
+              <td><button type="submit" class="btn btn-primary">{{button}}</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+     <!-- Search input and table -->
+     <div class="form-container" style="margin-bottom: 1cm;" >
+
+      <h2>List of TID's</h2>
+    <input type="text" id="searchInput"   placeholder="Search...">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th style="width: 5%;" scope="col">id</th>
+          <th scope="col">TID</th>
+          <th scope="col">Sponsor</th>
+          <th scope="col">GEM Test</th>
+          <th scope="col">GEM Auto</th>
+          <th scope="col">GEM UTIL4DEV</th>
+          <th scope="col" style="width: 20%;">Terminal Type</th>
+          <th scope="col">DCC</th>
+          <th scope="col">UPI</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tidData">
+          <td>{{ item.id_tid }}</td>
+          <td>{{ item.TID }}</td>
+          <td>{{ item.sponsor }}</td>
+          <td><input class="styled-checkbox" type="checkbox" [checked]="item.GEM_Test" disabled></td>
+          <td><input class="styled-checkbox" type="checkbox" [checked]="item.GEM_Auto" disabled></td>
+          <td><input class="styled-checkbox" type="checkbox" [checked]="item.GEM_UTIL4DEV" disabled></td>
+          <td>{{ item.Terminal_type }}</td>
+          <td><input class="styled-checkbox" type="checkbox" [checked]="item.DCC" disabled></td>
+          <td><input class="styled-checkbox" type="checkbox" [checked]="item.UPI" disabled></td>
+          <td style="width: 5%;"><button (click)="deleteTID(this.item.id_tid,this.getID())" class="btn " ><img style="width : 25px " src="..\..\assets\img\delete.png"> </button></td>
+          <td style="width: 5%;"><button (click)="passTID(this.item.id_tid)" type="button" class="btn "><img style="width : 25px " src="..\..\assets\img\modify.png"> </button></td>
+
+        </tr>
+      </tbody>
+      
+      
+    </table>
+  </div>
+</div>
+</section>
+
+ <style>
+  .form-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .form-container .form-control {
+    margin-bottom: 10px;
+  }
+
+  .table {
+    margin-top: 20px;
+  }
+
+  #searchInput {
+    margin-bottom: 10px;
+    width: 18%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+</style>
