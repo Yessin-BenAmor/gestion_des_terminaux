@@ -21,7 +21,7 @@ export class TIDCRUDService {
 
 
   //get tid 
-  getTID(id : any) {
+  getTID(id : any): Observable<any>    {
     return this.http.get<any[]>(`${this.apiUrl}/getTID`, { params: { id } });
   }
 
