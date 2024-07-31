@@ -26,9 +26,44 @@
 <section id="portfolio" class="portfolio">
   <div class="container">
     <div class="section-title">
-      <h2 style="margin-top: 1cm;">Welcome back {{username}} ! </h2>
+      <h2 style="margin-top: 1cm;text-transform: capitalize">Welcome Back {{username}}  ! </h2>
       <p>Find below the updated list of all available Tetra TIDs.</p>
     </div>
+
+
+<!-- Additional Form for Terminal Type CRUD -->
+<div class="form-container" style="margin-bottom: 1cm;">
+  <h2>terminalTypeHeader</h2>
+  <form [formGroup]="terminalTypeForm" (ngSubmit)="onTerminalTypeSubmit()">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 10%;">Terminal Type</th>
+          <th scope="col" style="width: 15%;">Serial Number</th>
+          <th scope="col" style="width: 10%;">Profile</th>
+          <th scope="col" style="width: 10%;">TID</th>
+          <th scope="col" style="width: 15%;">DB</th>
+          <th scope="col" style="width: 20%;">Comment</th>
+          <th scope="col" style="width: 15%;">WiFi MAC Address</th>
+          <th scope="col" style="width: 5%;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" formControlName="terminalType" class="form-control"></td>
+          <td><input type="text" formControlName="serialNumber" class="form-control"></td>
+          <td><input type="text" formControlName="profile" class="form-control"></td>
+          <td><input type="text" formControlName="TID" class="form-control"></td>
+          <td><input type="text" formControlName="DB" class="form-control"></td>
+          <td><input type="text" formControlName="comment" class="form-control"></td>
+          <td><input type="text" formControlName="wifiMacAddress" class="form-control"></td>
+          <td><button type="submit" class="btn btn-primary">ADD terminalType</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+
 
     <!-- Form -->
     <div class="form-container" style="margin-bottom: 1cm;">

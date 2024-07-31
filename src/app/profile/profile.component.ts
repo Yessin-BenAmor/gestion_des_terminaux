@@ -3,6 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule,FormBuilder, FormGroup,NgModel, Validators } from '@angular/forms';
 import { TIDCRUDService } from '../services/tid-crud.service';
+import { TerminalCrudService } from '../services/terminal-crud.service';
 import { Observable } from 'rxjs';
 import {
   MatSnackBar,
@@ -23,7 +24,7 @@ import { DialogExampleComponent } from '../dialog-example/dialog-example.compone
 @Component({
   selector: 'app-profile',
   standalone: true,
-  providers: [TIDCRUDService],
+  providers: [TIDCRUDService,TerminalCrudService],
   imports : [ReactiveFormsModule,CommonModule,MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule],
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'] // Corrected 'styleUrl' to 'styleUrls'
@@ -32,6 +33,7 @@ import { DialogExampleComponent } from '../dialog-example/dialog-example.compone
 
 
 export class ProfileComponent implements OnInit {
+  terminalTypeForm: FormGroup;
   tidForm: FormGroup; // Define FormGroup for form controls
   portfolioItems: any[] = []; 
   tidData: any;
@@ -40,7 +42,7 @@ export class ProfileComponent implements OnInit {
   button = "submit";
   id_tid1 = 0 ; 
   header = "Add a new TID";
-   constructor(public dialog:MatDialog,private _snackBar: MatSnackBar,private fb: FormBuilder, private authService: AuthService, private router: Router, private tidService : TIDCRUDService) {
+   constructor(public terminalService:TerminalCrudService, public dialog:MatDialog,private _snackBar: MatSnackBar,private fb: FormBuilder, private authService: AuthService, private router: Router, private tidService : TIDCRUDService) {
      this.tidForm = this.fb.group({
       TID: ["",  Validators.required],
       sponsor: ["", Validators.required],
@@ -56,6 +58,16 @@ export class ProfileComponent implements OnInit {
 
       DCC_UT4DEV: [false],  
       UPI_UT4DEV: [false] , 
+    });
+    this.terminalTypeForm = this.fb.group({
+      terminalType: ["",  Validators.required],
+      serialNumber: ["", Validators.required],
+      profile: ["", Validators.required],
+      TID: ["", Validators.required],
+      DB: ["", Validators.required],
+      comment: ["", Validators.required], 
+      wifiMacAddress: ["", Validators.required] ,  
+      
     });
   }
 
@@ -118,7 +130,7 @@ export class ProfileComponent implements OnInit {
 
 
 
-//get id of the user 
+//get id of   user 
   getID():  string | null {
      return this.authService.getID();}
 
@@ -226,6 +238,25 @@ passTID(id_tid: any) {
        
     }
   }
+
+
+  //submit terminal type 
+  onTerminalTypeSubmit(){
+    const form = this.terminalTypeForm.value;
+    console.log('Form submitted:', form);
+    this.terminalService.createTerminal(form).subscribe(
+      (data: any) => {
+        console.log('Create Terminal successful:', data);
+        this._snackBar.open("Terminal created", "OK",{duration: 5000});
+      },
+      (error: any) => {
+        console.error('Create Terminal error:', error);
+        alert("Error creating Terminal, please try again");
+      }
+    );
+  }
+
+
 
   signOut() {
     window.location.href = '/';

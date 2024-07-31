@@ -10,3 +10,4 @@ import { MatDialogModule,MatDialogTitle,MatDialogContent,MatDialog,MatDialogActi
 })
 export class DialogExampleComponent {
   constructor(public dialog : MatDialog) {}}
+  
